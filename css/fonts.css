@@ -1,0 +1,16 @@
+   @font-face {
+  font-family: Clash;
+  src: url("../fonts/ClashFont/clashroyalerus.ttf");}
+   @font-face {
+  font-family: MovaviGrot;
+  src: url("../fonts/MovaviGrotesqueBlack/MovaviGrotesqueBlack.ttf");}
+    @font-face {
+  font-family: RFKrabuler;
+  src: url("../fonts/RFKrabuler/RFKrabulerRegular.ttf");}
+  @font-face{
+  font-family:'SupercellMagic';
+  src: url('../fonts/supercell-magic/supercell-magic.eot');
+  src: local('SupercellMagic'),
+  url('../fonts/supercell-magic/supercell-magic.woff') format('woff'),
+  url('../fonts/supercell-magic/supercell-magic.ttf') format('truetype'),
+  url('../fonts/supercell-magic/supercell-magic.svg#font') format('svg');}
