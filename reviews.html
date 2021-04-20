@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Магазин аккаунтов и гемов Clash of Clans, Clash Royale, Brawl Stars</title>
+        <meta name="description" content="Здесь можно выгодно купить аккаунт Clash Royale, Clash of Clans, Brawl Stars">
+	<meta name="keywords" content="Clash Royale, Clash of Clans, Brawl Stars">  
+
+	<meta property="og:title" content="Магазин аккаунтов и гемов Clash of Clans, Clash Royale, Brawl Stars">
+	<meta property="og:description" content="Здесь можно выгодно купить аккаунт Clash Royale, Clash of Clans, Brawl Stars">
+	<meta property="og:image" content="https://sc-blog.com/img/icon/clash-royale.png">
+	      
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel='stylesheet prefetch' href='//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+  <link rel="stylesheet" href="http://brawlshops.ru/wp-content/themes/site/css/main.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
+  <!-- Include Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Include Modalite CSS -->
+  <link rel="stylesheet" type="text/css" href="css/modalite.min.css">
+  <script type="text/javascript" src="http://brawlshops.ru/wp-content/themes/site/vendor/modalite/modalite.min.js"></script>
+  <link rel="shortcut icon" href="/img/favicon.png">
+
+	<script type="text/javascript">
+		function getUserProfile(name) {
+			$.ajax({
+				type: 'POST',
+				url: '/reviews/ajax',
+				data: {
+					type: 'profile',
+					name: name
+				},
+				beforeSend: function() {
+					$('#beforeSend').show();
+				},
+				success: function(data) {
+					$('#beforeSend').hide();
+					console.log(data.type);
+					if (data.type == 'error') {
+						modalShow(data.type, data.msg);
+					} else{
+						$('#modals').append(data.msg);
+					}
+				}
+			});
+		}
+	</script>
+
+	<link rel="stylesheet" href="reviews.css">
+	<link rel="shortcut icon" href="/img/favicon.png">
+
+	<style type="text/css">
+		.userName {
+			cursor: pointer;
+		}
+		.grid12 .gridcol9 {
+			width: 700px;
+		}
+		[class*="gridcol"]:not([class*="offset"]) {
+			margin-left: 10px;
+		}
+		.Profile__login
+		{
+			color: #ffb651;
+			font-family: SupercellMagic, Arial;
+			text-decoration: none;
+			line-height: 1.5;
+			text-shadow: 1px 0 #000, -1px 0 #000, 0 2px #000, 0 -1px #000, 1px 2px #000, -1px 2px #000, 1px -1px #000, -1px -1px #000;
+			font-size: 1.7em;
+			margin-bottom: .5em;
+		} 
+		.Content__title {
+			font-family: SupercellMagic, Arial;
+			color: #fff;
+			text-decoration: none;
+			line-height: 1.5;
+			text-shadow: 1px 0 #000, -1px 0 #000, 0 2px #000, 0 -1px #000, 1px 2px #000, -1px 2px #000, 1px -1px #000, -1px -1px #000;
+		}
+		.Content__title span {
+			color: #ffb651;
+		}
+		.mb20 {
+			margin-bottom: 20px;
+		}
+
+.status_online { 
+ display: inline-block; 
+ height: 10px; 
+ width: 10px; 
+ margin-left: 5px; 
+ border-radius: 50%; 
+ background: #79b622; 
+}
+
+	</style>
+
+</head>
+<body>
+
+	  <header>
+  <nav class="menu-pm-container">
+      <ul id="menu-pm" class="">
+    <li id="menu-item-24" style="display: inline;">
+              
+                    <a href="/" class = "bt-menu _green">Аккаунты</a>
+          <a href="/p/gems.html" class = "bt-menu _green">Гемы</a>
+          <a href="/p/case.html" class = "bt-menu _green">Кейсы</a>
+          <a href="/p/boost.html" class = "bt-menu _green">Буст</a> 
+          <br><br>
+          <div class="menu_bottom">
+            <a href="/reviews.html" class = "bt-menu _orange">Отзывы</a>
+            <a href="/pages/about.html" class = "bt-menu _green">О нас</a>
+            <a href="/pages/rules.html" class = "bt-menu _green">Правила</a>
+            <a href="/pages/faq.html" class = "bt-menu _blue">FAQ</a>
+
+
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+	<main class="clearfix">
+		<section class="container">
+						<section class="grid12">
+				
+
+
+				<div class="gridcol12 Reviews">
+												
+					<div class="SiteContent">
+   <section class="grid12">
+     <div class="gridcol12">
+      <h1>ОТЗЫВЫ</h1>
+      <form method="post" class="review new-review">
+        <h3 style="font-family:Montserrat;color:black;font-weight:bold;">Оставить свой отзыв</h3>
+        <span class="review-mail">
+          <input type="email" name="email" oninvalid="this.setCustomValidity('Вы еще не совершали покупку, поэтому не можете оставить отзыв.')" placeholder="Введите ваш e-mail" required>
+        </span>
+        
+        <textarea oninvalid="this.setCustomValidity('Вы еще не совершали покупку, поэтому не можете оставить отзыв.')" placeholder="Напишите свой отзыв" required></textarea>
+        <input type="submit" class="btnot" style="background-color:#733bde;border-radius:5px;font-family:Montserrat;" value="Отправить"> 
+      </form>
+      <script type="text/javascript">
+        var months = [
+           'января',
+           'февраля',
+           'марта',
+           'апреля',
+           'мая',
+           'июня',
+           'июля',
+           'августа',
+           'сентября',
+           'ноября',
+           'декабря',
+        ];
+      </script>
+      <div class="review">
+        <span class="review-mail">**mpe**@gmail.com</span>
+        
+        <time class="">
+          <script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script>
+        </time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">крутая тема, покупайте все, сайт не обманывает!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ker.som**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">все круто, но аккаунтов маловато</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**igrfi**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">крутой сайт, офигенски затарился по акциям</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ukaram**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">офигенно</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**opa19**@yandex.ru</span>
+    
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">збс затарил акков по дешевке</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**kan-lan**@mail.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Супер магаз! все данные пришли на почту</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**sworg1**@ya.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Сначала не верил, что заберу 11 тх за 199р, но забрал! Спасибо вам!!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**uiru**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Всё огонь, взял акк, всем доволен!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**14sala**@mail.ru</span>
+   
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Хорошый сайт, не обманыват как некоторые</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**iunu-5**@yandex.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">топ</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**gram000**@gmail.com</span>
+   
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">сайт супер!! сделайте плиз так чтобы когда приводишь друзей то давали бы бесплатные акки! я вам много приведу!!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**enila7**@mail.ru</span>
+   
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Акции ох*енные просто, купил охуенный акк почти нахаляву и оч доволен. Вы лучшие!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**sar**@rambler.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Данные не пришли!!!! <br>upd: Пришли)) Извините, все четко</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**abar20**@gmail.com</span>
+   
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">купил охуенный акк 11 арены!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**eg-burk**@bk.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">я купил у вас акк, а потом перепродал его и поднял 300р :D</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**lis5**@yandex.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Надеюсь вас не закроют, вы реально круты</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**liev.rom**@mail.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Сайт норм</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ssaall22**@yandex.ru</span>
+        
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">спасибо разрабам, сайт супер все пришло!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**.eugenito9**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Сайт заебись, но дизайн придумывал явно гей</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**junol19**@inbox.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Мы всем классом в шк на вашем сайте затариваемся))0 Спс, что не кидаете</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**zaqapa-10**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Офигенный магаз</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**oolopo00**@yandex.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Бля, скиньте мне денег, чтоб я еще затарился тут<br>Я верну))</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**tur.kush**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">купил акк с 12 легендарками, нагибаю всё и вся</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**hanar99**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Спс, не наебали</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**slanlip7**@rambler.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Норм магаз</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**salipor-20**@mail.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Админ, чекни лс хочу предложить кое что</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**da.ma**@bk.ru</span>
+     
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">выбил крутой акк ыхыхы)</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**nov.iv**@mail.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Всё ок, товар пришел</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**9xaxa9**@bk.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">вы норм, не то что другие</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**15sober**@yandex.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">рил топ</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**for**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">ля, вы просто офигенные</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ul-gar19**@rambler.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Это единственный сайт, который не наебывает!!</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ul-gar19**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">расскажу о вас своим друзьям</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**mar.zoll**@rambler.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Норм, поднял дешево поднял акки</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**nadiiy20**@mail.ru</span>
+        
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">у меня есть друган блогер попгошу его о вас рассказать, вы офигенные и не кидаете.. спасибо </p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**.samara09**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">clash-shops - топчик</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**-lisa**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">вы лучшие</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ma.lo**@bk.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">спс</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**riqida0**@yandex.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">го сделаете конкурс на 100 000 гемов????</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**eg.ivanchen**@yandex.ru</span>
+        
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">clash-shops ру лучший сайт который видел! не развод, общие аккаунты тащат) </p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**op**@mail.ru</span>
+       
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">я щас купил акк 11 тх за 199р, это вообще законно?</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**jino.ron19**@inbox.ru</span>
+      
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">brawlshops топ</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**ke-20**@mail.ru</span>
+        
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">САМЫЙ ОХЕРЕННЫЙ САЙТ</p>
+      </div>
+      <div class="review">
+        <span class="review-mail">**or.gleb**@yandex.ru</span>
+        
+        <time class=""><script type="text/javascript">var now = new Date(); document.write(now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear() + ' г.');</script></time>
+        <p style="font-family: Montserrat;font-size: 15px;color: black;">Плиз сделайте побольше аккаунтов на продажу, хотим с друганами закупиться у вас </p>
+      </div>
+    </div>
+</div>
+				</div>
+			</section>
+
+		</section>
+				
+	</main>
+	<div class="filter"></div>
+	<div id="modals">
+		<div id="beforeSend" class="modalDialog animated fadeIn" style="overflow-y: auto; z-index: 100; display: none;">
+			<div class="ModalShadow">
+				<div>
+					<center>
+						<label>Запрос выполняется!<br></label>
+						<br>
+						<img src="/img/loader.gif" style="width:100px">
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+		<footer class="clearfix">
+
+<style>
+
+.wroft {
+    font-size: 16px; 
+    font-size: 4vw;
+}
+
+.fo {
+    width: 95% !important;
+}
+.-te-banner-frame {
+  display: none;
+}
+.foo {
+    width: 95%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: 2px rgb(147, 156, 155) dashed;
+    padding-right: 2.2%;
+    border-radius: 10px;
+}
+
+.fooo {
+    padding-right: 0%;
+}
+
+</style>
+<div style="font-family:Montserrat; font-size: 15px; font-weight:100; color: #565656; margin-top: 20px;">	
+			<a href="/" style="color: #565656;">Аккаунты </a> | 			
+				<a href="/p/gems.html" style="color: #565656;"> Гемы </a> | 				
+				<a href="/p/case.html" style="color: #565656;"> Кейсы </a> | 			
+				<a href="/reviews.html" style="color: #565656;"> Отзывы </a> | 			
+				<a href="/pages/about.html" style="color: #565656;"> О нас </a> | 				
+				<a href="/pages/rules.html" style="color: #565656;"> Правила </a> | 	
+				<a href="/pages/faq.html" style="color: #565656;"> FAQ</a>
+				| <a href="https://vk.com/clashaid" style="color: #565656;"> Поддержка</a>
+</div>
+
+<p style="font-family:Montserrat; font-weight:100;font-size: 13px; color: #565656;">Copyright © 2015-2019 brawlshops.ru</p>
+
+<div class="lang_page" style="margin-top: -20px;">
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter51267703 = new Ya.Metrika2({
+                    id:51267703,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/51267703" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<script type="text/javascript">
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+    event = document.createEvent('HTMLEvents');
+    event.initEvent(eventName, true, true);
+    element.dispatchEvent(event);
+    } else {
+    event = document.createEventObject();
+    event.eventType = eventName;
+    element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  jQuery('.lang-select').click(function() {
+    var theLang = jQuery(this).attr('data-lang');
+    var langMatch = jQuery(this).attr('href').match(/\#googtrans\(([^|]+)\|([^)]+)/);
+    jQuery('.goog-te-combo').val(theLang);
+    
+    setCookie("googtrans", "/ru/" + langMatch[2], 0, "/", ".sc-blog.com");
+    setCookie("googtrans", "/ru/" + langMatch[2], 0, "/");
+
+    window.location = jQuery(this).attr('href');
+    location.reload();
+  });
+function setCookie(b, h, c, f, e) {
+    var a;
+    if (c === 0) {
+        a = ""
+    } else {
+        var g = new Date();
+        g.setTime(g.getTime() + (c * 24 * 60 * 60 * 1000));
+        a = "expires=" + g.toGMTString() + "; "
+    }
+    var e = (typeof e === "undefined") ? "" : "; domain=" + e;
+    document.cookie = b + "=" + h + "; " + a + "path=" + f + e
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style type="text/css">
+  body {
+    top: 0px !important;
+  }
+  .skiptranslate {
+    display: none;
+  }
+  .lang_page {
+    display: inline-flex;
+    padding-top: 25px;
+  }
+  .lang_page li {
+    padding-right: 5px;
+  }
+  .lang_page img {
+    width: 25px;
+    box-shadow:0 0 1px 1px #939c9b;
+  }
+  .goog-tooltip {
+    all: unset;
+    display: none;
+  }
+</style>
+
+	<script type="text/javascript" src="js/modalite.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+	<script src="js/common.js"></script>
+	<script type="text/javascript">
+		$("#new_rev").click(function(event) {
+			event.preventDefault();
+
+			if ($('.emoji-wysiwyg-editor').text().length <= 4) {
+				modalShow('error', 'Отзыв слишком короткий! Минимальная длина 5 символов.');
+			} else {
+				$.post(
+					'/reviews/ajax',
+					{
+						type: 'new',
+						stars: $('[name=mark]:checked').val(),
+						text: $('.emoji-wysiwyg-editor').text()
+					},
+					function(data) {
+						if (data.type == 'success') {
+							$('#mark1').prop('checked', true);
+							$('.emoji-wysiwyg-editor').text('');
+							modalShow('success', 'Спасибо! Отзыв будет опубликован после проверки модератора.', 'reviews_success');
+						}
+					});
+			}
+			return false;
+		});
+		<br />
+<b>Notice</b>:  Undefined index: status in <b>/home/httpd/vhosts/sc-blog.com/httpdocs/reviews/index.php</b> on line <b>292</b><br />
+	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>
